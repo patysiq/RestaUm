@@ -7,13 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B1E26CC2B934F830061A88A /* oneLeftGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E26CB2B934F830061A88A /* oneLeftGameApp.swift */; };
-		7B1E26CE2B934F830061A88A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E26CD2B934F830061A88A /* ContentView.swift */; };
+		7B1E26CC2B934F830061A88A /* AppEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E26CB2B934F830061A88A /* AppEntry.swift */; };
+		7B1E26CE2B934F830061A88A /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E26CD2B934F830061A88A /* StartView.swift */; };
 		7B1E26D02B934F860061A88A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B1E26CF2B934F860061A88A /* Assets.xcassets */; };
 		7B1E26D32B934F860061A88A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B1E26D22B934F860061A88A /* Preview Assets.xcassets */; };
 		7B1E26DD2B934F860061A88A /* oneLeftGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E26DC2B934F860061A88A /* oneLeftGameTests.swift */; };
 		7B1E26E72B934F860061A88A /* oneLeftGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E26E62B934F860061A88A /* oneLeftGameUITests.swift */; };
 		7B1E26E92B934F860061A88A /* oneLeftGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E26E82B934F860061A88A /* oneLeftGameUITestsLaunchTests.swift */; };
+		7B1E26F82B9362A20061A88A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B1E26F72B9362A20061A88A /* Launch Screen.storyboard */; };
+		7B1E26FB2B93655D0061A88A /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E26FA2B93655D0061A88A /* GameModels.swift */; };
+		7B1E26FE2B936B840061A88A /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E26FD2B936B840061A88A /* ViewModifiers.swift */; };
+		7B1E27012B936C760061A88A /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E27002B936C760061A88A /* GameView.swift */; };
+		7B1E27032B93758C0061A88A /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E27022B93758C0061A88A /* GameService.swift */; };
+		7B1E27052B937A6F0061A88A /* GameCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E27042B937A6F0061A88A /* GameCircle.swift */; };
+		7B1E27082B94FD6D0061A88A /* MPConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E27072B94FD6D0061A88A /* MPConnectionManager.swift */; };
+		7B1E270A2B94FE460061A88A /* MPPeersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E27092B94FE460061A88A /* MPPeersView.swift */; };
+		7B1E270C2B94FF190061A88A /* MPGameMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E270B2B94FF190061A88A /* MPGameMove.swift */; };
+		7B1E27102B95275C0061A88A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E270F2B95275C0061A88A /* CircleView.swift */; };
+		7B1E27132B95752E0061A88A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E27122B95752E0061A88A /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +46,8 @@
 
 /* Begin PBXFileReference section */
 		7B1E26C82B934F830061A88A /* oneLeftGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oneLeftGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B1E26CB2B934F830061A88A /* oneLeftGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneLeftGameApp.swift; sourceTree = "<group>"; };
-		7B1E26CD2B934F830061A88A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7B1E26CB2B934F830061A88A /* AppEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntry.swift; sourceTree = "<group>"; };
+		7B1E26CD2B934F830061A88A /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		7B1E26CF2B934F860061A88A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B1E26D22B934F860061A88A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7B1E26D82B934F860061A88A /* oneLeftGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = oneLeftGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +55,18 @@
 		7B1E26E22B934F860061A88A /* oneLeftGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = oneLeftGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1E26E62B934F860061A88A /* oneLeftGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneLeftGameUITests.swift; sourceTree = "<group>"; };
 		7B1E26E82B934F860061A88A /* oneLeftGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneLeftGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7B1E26F72B9362A20061A88A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		7B1E26FA2B93655D0061A88A /* GameModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModels.swift; sourceTree = "<group>"; };
+		7B1E26FD2B936B840061A88A /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		7B1E27002B936C760061A88A /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		7B1E27022B93758C0061A88A /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		7B1E27042B937A6F0061A88A /* GameCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCircle.swift; sourceTree = "<group>"; };
+		7B1E27072B94FD6D0061A88A /* MPConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPConnectionManager.swift; sourceTree = "<group>"; };
+		7B1E27092B94FE460061A88A /* MPPeersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPPeersView.swift; sourceTree = "<group>"; };
+		7B1E270B2B94FF190061A88A /* MPGameMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPGameMove.swift; sourceTree = "<group>"; };
+		7B1E270F2B95275C0061A88A /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		7B1E27112B956D4B0061A88A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7B1E27122B95752E0061A88A /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +117,17 @@
 		7B1E26CA2B934F830061A88A /* oneLeftGame */ = {
 			isa = PBXGroup;
 			children = (
-				7B1E26CB2B934F830061A88A /* oneLeftGameApp.swift */,
-				7B1E26CD2B934F830061A88A /* ContentView.swift */,
+				7B1E27112B956D4B0061A88A /* Info.plist */,
+				7B1E26CB2B934F830061A88A /* AppEntry.swift */,
+				7B1E26CD2B934F830061A88A /* StartView.swift */,
+				7B1E26FF2B936C500061A88A /* Game Screen */,
+				7B1E27062B937B0F0061A88A /* Multipeer */,
+				7B1E26F92B9364E00061A88A /* Models */,
+				7B1E26FC2B936B470061A88A /* Utilities */,
 				7B1E26CF2B934F860061A88A /* Assets.xcassets */,
+				7B1E26F72B9362A20061A88A /* Launch Screen.storyboard */,
 				7B1E26D12B934F860061A88A /* Preview Content */,
+				7B1E27122B95752E0061A88A /* File.swift */,
 			);
 			path = oneLeftGame;
 			sourceTree = "<group>";
@@ -125,6 +155,43 @@
 				7B1E26E82B934F860061A88A /* oneLeftGameUITestsLaunchTests.swift */,
 			);
 			path = oneLeftGameUITests;
+			sourceTree = "<group>";
+		};
+		7B1E26F92B9364E00061A88A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7B1E26FA2B93655D0061A88A /* GameModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7B1E26FC2B936B470061A88A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7B1E26FD2B936B840061A88A /* ViewModifiers.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		7B1E26FF2B936C500061A88A /* Game Screen */ = {
+			isa = PBXGroup;
+			children = (
+				7B1E27002B936C760061A88A /* GameView.swift */,
+				7B1E27022B93758C0061A88A /* GameService.swift */,
+				7B1E27042B937A6F0061A88A /* GameCircle.swift */,
+				7B1E270F2B95275C0061A88A /* CircleView.swift */,
+			);
+			path = "Game Screen";
+			sourceTree = "<group>";
+		};
+		7B1E27062B937B0F0061A88A /* Multipeer */ = {
+			isa = PBXGroup;
+			children = (
+				7B1E27072B94FD6D0061A88A /* MPConnectionManager.swift */,
+				7B1E27092B94FE460061A88A /* MPPeersView.swift */,
+				7B1E270B2B94FF190061A88A /* MPGameMove.swift */,
+			);
+			path = Multipeer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +300,7 @@
 			files = (
 				7B1E26D32B934F860061A88A /* Preview Assets.xcassets in Resources */,
 				7B1E26D02B934F860061A88A /* Assets.xcassets in Resources */,
+				7B1E26F82B9362A20061A88A /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +325,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B1E26CE2B934F830061A88A /* ContentView.swift in Sources */,
-				7B1E26CC2B934F830061A88A /* oneLeftGameApp.swift in Sources */,
+				7B1E26CE2B934F830061A88A /* StartView.swift in Sources */,
+				7B1E27132B95752E0061A88A /* File.swift in Sources */,
+				7B1E26CC2B934F830061A88A /* AppEntry.swift in Sources */,
+				7B1E26FB2B93655D0061A88A /* GameModels.swift in Sources */,
+				7B1E26FE2B936B840061A88A /* ViewModifiers.swift in Sources */,
+				7B1E27012B936C760061A88A /* GameView.swift in Sources */,
+				7B1E270C2B94FF190061A88A /* MPGameMove.swift in Sources */,
+				7B1E27102B95275C0061A88A /* CircleView.swift in Sources */,
+				7B1E27082B94FD6D0061A88A /* MPConnectionManager.swift in Sources */,
+				7B1E27052B937A6F0061A88A /* GameCircle.swift in Sources */,
+				7B1E270A2B94FE460061A88A /* MPPeersView.swift in Sources */,
+				7B1E27032B93758C0061A88A /* GameService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,20 +500,25 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"oneLeftGame/Preview Content\"";
-				DEVELOPMENT_TEAM = 3UHTMV6K9G;
+				DEVELOPMENT_TEAM = 937MK3AF6X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = oneLeftGame/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Resta um";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Gostaria de ter acesso a sua rede local.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.ops-swe.aoi.Director.oneLeftGame";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sampaiopatricia.oneLeftGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -451,20 +534,25 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"oneLeftGame/Preview Content\"";
-				DEVELOPMENT_TEAM = 3UHTMV6K9G;
+				DEVELOPMENT_TEAM = 937MK3AF6X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = oneLeftGame/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Resta um";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Gostaria de ter acesso a sua rede local.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.ops-swe.aoi.Director.oneLeftGame";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sampaiopatricia.oneLeftGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
