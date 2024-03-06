@@ -18,6 +18,11 @@ class MPConnectionManager: NSObject, ObservableObject {
     let nearbyServiceAdvertiser: MCNearbyServiceAdvertiser
     let nearbyServiceBrowser: MCNearbyServiceBrowser
     var game: GameService?
+    private let encoder = PropertyListEncoder()
+    private let decoder = PropertyListDecoder()
+    @Published var chats: Dictionary<Person,Chat> = [:]
+    
+    var myPerson:Person
     
     func setup(game:GameService) {
         self.game = game
@@ -44,6 +49,7 @@ class MPConnectionManager: NSObject, ObservableObject {
         session = MCSession(peer: myPeerId)
         nearbyServiceAdvertiser = MCNearbyServiceAdvertiser(peer: myPeerId, discoveryInfo: nil, serviceType: serviceType)
         nearbyServiceBrowser = MCNearbyServiceBrowser(peer: myPeerId, serviceType: serviceType)
+        myPerson = Person(self.session.myPeerID, id: UIDevice.current.identifierForVendor!)
         super.init()
         session.delegate = self
         nearbyServiceAdvertiser.delegate = self
@@ -72,16 +78,66 @@ class MPConnectionManager: NSObject, ObservableObject {
         availablePeers.removeAll()
     }
     
-    func send(gameMove: MPGameMove) {
+    func send(gameMove: MPGameMove?,_ messageText: String?,chat: Chat?) {
         if !session.connectedPeers.isEmpty {
             do {
-                if let data = gameMove.data() {
+                if let data = gameMove?.data() {
                     try session.send(data, toPeers: session.connectedPeers, with: .reliable)
                 }
             } catch {
                 print("error sending \(error.localizedDescription)")
             }
+            
+            DispatchQueue.main.async {
+                let newMessage = ConnectMessage(messageType: .Message,message: Message(text: messageText ?? "", from: self.myPerson))
+                    do {
+                        if let data = try? self.encoder.encode(newMessage) {
+                            DispatchQueue.main.async {
+                                guard let chat = chat else {return}
+                                self.chats[chat.person]?.messages.append(newMessage.message!)
+                            }
+                            guard let chat = chat else {return}
+                            try self.session.send(data, toPeers: [chat.peer], with: .reliable)
+                        }
+                    } catch {
+                        print("Error for sending: \(String(describing: error))")
+                    }
+            }
         }
+    }
+    
+    func reciveInfo(info: ConnectMessage, from:MCPeerID){
+        print("Recived Info",info.messageType)
+        if(info.messageType == .Message){
+            newMessage(message: info.message!,from:from)
+        }
+        if(info.messageType == .PeerInfo){
+            newPerson(person: info.peerInfo!,from:from)
+        }
+    }
+    
+    func newConnection(peer:MCPeerID){
+        print("New Connection",peer.displayName)
+        
+        let newMessage = ConnectMessage(messageType: .PeerInfo,peerInfo: self.myPerson)
+        do {
+            if let data = try? encoder.encode(newMessage) {
+                try session.send(data, toPeers: [peer], with: .reliable)
+            }
+        } catch {
+            print("Error for newConnection: \(String(describing: error))")
+        }
+    }
+    
+    func newPerson(person:Person,from:MCPeerID){
+        print("New Person ",person.name)
+        self.chats[person] = Chat(peer:from,person: person)
+
+    }
+    
+    func newMessage(message:Message,from:MCPeerID){
+        print("New Message ",message.text)
+        chats[message.from]!.messages.append(message)
     }
 }
 
@@ -110,6 +166,10 @@ extension MPConnectionManager: MCNearbyServiceAdvertiserDelegate {
             self.invitationHandler = invitationHandler
         }
     }
+    
+    func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: Error) {
+        print("ServiceAdvertiser didNotStartAdvertisingPeer: \(String(describing: error))")
+    }
 }
 
 extension MPConnectionManager: MCSessionDelegate {
@@ -124,6 +184,7 @@ extension MPConnectionManager: MCSessionDelegate {
             DispatchQueue.main.async {
                 self.paired = true
                 self.isAvailableToPlay = false
+                self.newConnection(peer:peerID)
             }
         default:
             DispatchQueue.main.async {
@@ -155,6 +216,12 @@ extension MPConnectionManager: MCSessionDelegate {
                     self.session.disconnect()
                     self.isAvailableToPlay = true
                 }
+            }
+        }
+        
+        if let message = try? decoder.decode(ConnectMessage.self, from: data) {
+            DispatchQueue.main.async {
+                self.reciveInfo(info: message,from: peerID)
             }
         }
     }
