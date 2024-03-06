@@ -23,11 +23,11 @@ struct CircleView: View {
                     Move.firstIndex =  nil
                     showingAlert = true
                     return }
-                if game.gameBoard[index].image == GamePiece.x.image && game.gameBoard[indice].image == GamePiece.o.image && game.gameBoard[first].image == GamePiece.o.image{
+                if game.gameBoard[index].image == GamePiece.x.image && game.gameBoard[indice].image == GamePiece.o.image && game.gameBoard[first].image == GamePiece.o.image {
                     game.gameBoard[first].image = GamePiece.x.image
                     game.gameBoard[indice].image = GamePiece.x.image
                     game.gameBoard[index].image = GamePiece.o.image
-                    
+                    Move.moves += 1
                 } else {
                     showingAlert = true
                 }
@@ -39,7 +39,7 @@ struct CircleView: View {
                 
                 if game.gameType == .peer {
                     let gameMove = MPGameMove(action: .move, playerName: connectionManager.myPeerId.displayName, board: [first,indice,index])
-                    connectionManager.send(gameMove: gameMove)
+                    connectionManager.send(gameMove: gameMove, nil, chat: nil)
                 }
             }
         } label: {

@@ -14,7 +14,7 @@ struct MPPeersView: View {
     @Binding var startGame: Bool
     var body: some View {
         VStack {
-            Text("Available Players")
+            Text("Jogadores próximos")
             List(connectionManager.availablePeers, id: \.self) { peer in
                 HStack {
                     Text(peer.displayName)

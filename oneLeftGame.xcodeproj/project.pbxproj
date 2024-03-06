@@ -25,6 +25,13 @@
 		7B1E270C2B94FF190061A88A /* MPGameMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E270B2B94FF190061A88A /* MPGameMove.swift */; };
 		7B1E27102B95275C0061A88A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E270F2B95275C0061A88A /* CircleView.swift */; };
 		7B1E27132B95752E0061A88A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E27122B95752E0061A88A /* File.swift */; };
+		7B25A1212B97D6A6000D61DD /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B25A1202B97D6A6000D61DD /* MessageModel.swift */; };
+		7B25A1242B97DCCD000D61DD /* Character+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B25A1232B97DCCD000D61DD /* Character+Exts.swift */; };
+		7B25A1262B97DD13000D61DD /* String+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B25A1252B97DD13000D61DD /* String+Exts.swift */; };
+		7B25A1292B97DD67000D61DD /* PlayerButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B25A1282B97DD67000D61DD /* PlayerButtonStyle.swift */; };
+		7B25A12B2B97DD94000D61DD /* RoundedTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B25A12A2B97DD94000D61DD /* RoundedTextFieldStyle.swift */; };
+		7B25A12E2B97DE23000D61DD /* ChatMessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B25A12D2B97DE23000D61DD /* ChatMessageRow.swift */; };
+		7B25A1302B97DEDA000D61DD /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B25A12F2B97DEDA000D61DD /* ChatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +74,13 @@
 		7B1E270F2B95275C0061A88A /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		7B1E27112B956D4B0061A88A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7B1E27122B95752E0061A88A /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		7B25A1202B97D6A6000D61DD /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		7B25A1232B97DCCD000D61DD /* Character+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Exts.swift"; sourceTree = "<group>"; };
+		7B25A1252B97DD13000D61DD /* String+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Exts.swift"; sourceTree = "<group>"; };
+		7B25A1282B97DD67000D61DD /* PlayerButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerButtonStyle.swift; sourceTree = "<group>"; };
+		7B25A12A2B97DD94000D61DD /* RoundedTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldStyle.swift; sourceTree = "<group>"; };
+		7B25A12D2B97DE23000D61DD /* ChatMessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageRow.swift; sourceTree = "<group>"; };
+		7B25A12F2B97DEDA000D61DD /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +135,7 @@
 				7B1E26CB2B934F830061A88A /* AppEntry.swift */,
 				7B1E26CD2B934F830061A88A /* StartView.swift */,
 				7B1E26FF2B936C500061A88A /* Game Screen */,
+				7B25A1222B97DCB5000D61DD /* Chat */,
 				7B1E27062B937B0F0061A88A /* Multipeer */,
 				7B1E26F92B9364E00061A88A /* Models */,
 				7B1E26FC2B936B470061A88A /* Utilities */,
@@ -161,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				7B1E26FA2B93655D0061A88A /* GameModels.swift */,
+				7B25A1202B97D6A6000D61DD /* MessageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,7 +184,10 @@
 		7B1E26FC2B936B470061A88A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				7B25A1272B97DD57000D61DD /* Styles */,
 				7B1E26FD2B936B840061A88A /* ViewModifiers.swift */,
+				7B25A1232B97DCCD000D61DD /* Character+Exts.swift */,
+				7B25A1252B97DD13000D61DD /* String+Exts.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -192,6 +211,32 @@
 				7B1E270B2B94FF190061A88A /* MPGameMove.swift */,
 			);
 			path = Multipeer;
+			sourceTree = "<group>";
+		};
+		7B25A1222B97DCB5000D61DD /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				7B25A12C2B97DE1B000D61DD /* Message */,
+				7B25A12F2B97DEDA000D61DD /* ChatView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		7B25A1272B97DD57000D61DD /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				7B25A1282B97DD67000D61DD /* PlayerButtonStyle.swift */,
+				7B25A12A2B97DD94000D61DD /* RoundedTextFieldStyle.swift */,
+			);
+			name = Styles;
+			sourceTree = "<group>";
+		};
+		7B25A12C2B97DE1B000D61DD /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				7B25A12D2B97DE23000D61DD /* ChatMessageRow.swift */,
+			);
+			path = Message;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,15 +370,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B25A1302B97DEDA000D61DD /* ChatView.swift in Sources */,
 				7B1E26CE2B934F830061A88A /* StartView.swift in Sources */,
 				7B1E27132B95752E0061A88A /* File.swift in Sources */,
 				7B1E26CC2B934F830061A88A /* AppEntry.swift in Sources */,
+				7B25A12B2B97DD94000D61DD /* RoundedTextFieldStyle.swift in Sources */,
 				7B1E26FB2B93655D0061A88A /* GameModels.swift in Sources */,
 				7B1E26FE2B936B840061A88A /* ViewModifiers.swift in Sources */,
 				7B1E27012B936C760061A88A /* GameView.swift in Sources */,
+				7B25A1212B97D6A6000D61DD /* MessageModel.swift in Sources */,
 				7B1E270C2B94FF190061A88A /* MPGameMove.swift in Sources */,
+				7B25A1262B97DD13000D61DD /* String+Exts.swift in Sources */,
 				7B1E27102B95275C0061A88A /* CircleView.swift in Sources */,
+				7B25A1242B97DCCD000D61DD /* Character+Exts.swift in Sources */,
+				7B25A12E2B97DE23000D61DD /* ChatMessageRow.swift in Sources */,
 				7B1E27082B94FD6D0061A88A /* MPConnectionManager.swift in Sources */,
+				7B25A1292B97DD67000D61DD /* PlayerButtonStyle.swift in Sources */,
 				7B1E27052B937A6F0061A88A /* GameCircle.swift in Sources */,
 				7B1E270A2B94FE460061A88A /* MPPeersView.swift in Sources */,
 				7B1E27032B93758C0061A88A /* GameService.swift in Sources */,

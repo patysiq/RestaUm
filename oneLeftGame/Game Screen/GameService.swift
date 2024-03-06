@@ -12,7 +12,6 @@ import UIKit
 class GameService: ObservableObject {
     @Published var player1 = Player(gamePiece: .x, name: "Jogador 1")
     @Published var player2 = Player(gamePiece: .x, name: "Jogador 2")
-    @Published var possibleMoves = Move.all
     @Published var firstIndex = Int()
     @Published var secondIndex = Int()
     @Published var gameOver = false
@@ -57,7 +56,6 @@ class GameService: ObservableObject {
         player1.moves.removeAll()
         player2.moves.removeAll()
         gameOver = false
-        possibleMoves = Move.all
         gameBoard = GameCircle.reset
     }
     

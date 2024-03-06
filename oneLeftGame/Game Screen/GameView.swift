@@ -24,7 +24,7 @@ struct GameView: View {
                         game.player1.isCurrent = true
                         if game.gameType == .peer {
                             let gameMove = MPGameMove(action: .start, playerName: game.player1.name, board: nil)
-                            connectionManager.send(gameMove: gameMove)
+                            connectionManager.send(gameMove: gameMove, nil, chat: nil)
                         }
 
                     }
@@ -33,7 +33,7 @@ struct GameView: View {
                         game.player2.isCurrent = true
                         if game.gameType == .peer {
                             let gameMove = MPGameMove(action: .start, playerName: game.player2.name, board: nil)
-                            connectionManager.send(gameMove: gameMove)
+                            connectionManager.send(gameMove: gameMove, nil, chat: nil)
                         }
 
                     }
@@ -87,13 +87,46 @@ struct GameView: View {
                             game.reset()
                             if game.gameType == .peer {
                                 let gameMove = MPGameMove(action: .reset, playerName: nil, board: nil)
-                                connectionManager.send(gameMove: gameMove)
+                                connectionManager.send(gameMove: gameMove, nil, chat: nil)
                             }
                         }
                         .buttonStyle(.borderedProminent)
                     }
                 }
                 .font(.largeTitle)
+                Section("Chats"){
+                    if(connectionManager.chats.isEmpty){
+                        Text("No Chats")
+                    }else{
+                        ForEach(Array(connectionManager.chats),id:\.value.id){id, chat in
+                            NavigationLink{
+                                ChatView(person:id)
+                                    .navigationTitle(chat.person.name)
+                            } label: {
+                                Text(chat.peer.displayName)
+                            }
+                        }
+                    }
+                }
+                if game.gameType == .peer {
+                    
+                }
+                List {
+                    Section("Chats"){
+                        if(connectionManager.chats.isEmpty) {
+                            Text("No Chats")
+                        }else{
+                            ForEach(Array(connectionManager.chats),id:\.value.id){id, chat in
+                                NavigationLink{
+                                    ChatView(person:id)
+                                        .navigationTitle(chat.person.name)
+                                } label: {
+                                    Text(chat.peer.displayName)
+                                }
+                            }
+                        }
+                    }
+                }
                 Spacer()
             }
             .toolbar {
@@ -102,7 +135,7 @@ struct GameView: View {
                         dismiss()
                         if game.gameType == .peer {
                             let gameMove = MPGameMove(action: .end, playerName: nil, board: nil)
-                            connectionManager.send(gameMove: gameMove)
+                            connectionManager.send(gameMove: gameMove, nil, chat: nil)
                         }
                     }
                     .buttonStyle(.bordered)
@@ -127,15 +160,3 @@ struct GameView: View {
 }
 
 
-struct PlayerButtonStyle: ButtonStyle {
-    let player: Player
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding(8)
-            .background(RoundedRectangle(cornerRadius: 10)
-                .fill(player.isCurrent ? Color.green : Color.gray)
-            )
-            .foregroundColor(.white)
-        
-    }
-}
